@@ -7,8 +7,10 @@ const steps = [
     title: "Individualiems rėmėjams",
     description:
       "Kiekvienas rėmėjas mums yra svarbus. Prenumeravę naujienlaiškį kartą per metus gausite veiklos ataskaitą ir informaciją, kaip buvo panaudota Jūsų parama.",
-    link: "#contact",
-    linkText: "Susisiekite su mumis →",
+    details: "Parama gali būti prenumeruojama kas mėnesį arba skiriama vienkartinė suma.",
+
+    link: "https://contribee.com/tevyneslabui",
+    linkText: "Paremti per Contribee",
   },
   {
     icon: CreditCard,
@@ -22,14 +24,22 @@ const steps = [
       "Išgyvenimo žygiai su karybos elementais",
       "Pilietinio pasipriešinimo pagrindai",
     ],
+    secondaryLink: "#contact",
+    secondaryLinkText: "Susisiekite su mumis →",
   },
   {
     icon: Building2,
-    title: "Ką parama suteikia",
+    title: "Paremkite mūsų veiklą – skirkite 1,2 % GPM",
     description:
-      "Parama padeda įsigyti reikalingą įrangą, organizuoti mokymus ir stiprinti visuomenės pasirengimą krizėms.",
-    link: "#how-to-help",
-    linkText: "Sužinok daugiau →",
+      "Kviečiame prisidėti prie mūsų veiklos skiriant 1,2 % jau sumokėto gyventojų pajamų mokesčio. Tai Jums nieko papildomai nekainuoja, tačiau mums leidžia tęsti ir plėsti svarbias iniciatyvas.",
+    buttonUrl: "https://www.vmi.lt/",
+    buttonText: "VMI deklaravimo sistema",
+    details: "Kaip tai padaryti?\nTai užtruks vos kelias minutes – sekite instrukciją.",
+    orgInfo: {
+      name: "VšĮ „Tėvynės labui“",
+      code: "306207884",
+    },
+    thanks: "Ačiū už Jūsų palaikymą!",
   },
 ];
 
@@ -71,6 +81,32 @@ const HowToHelpSection = () => {
               <p className="text-muted-foreground font-light leading-relaxed text-sm mb-4 text-justify">
                 {step.description}
               </p>
+              {step.details && typeof step.details === "string" && (
+                <p className="text-muted-foreground font-light leading-relaxed text-sm mb-4 text-justify">
+                  {step.details}
+                </p>
+              )}
+              {step.buttonUrl && (
+                <a
+                  href={step.buttonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded hover:opacity-90 transition-opacity text-sm font-medium mb-4"
+                >
+                  {step.buttonText}
+                </a>
+              )}
+              {step.orgInfo && (
+                <div className="bg-muted/50 p-3 rounded-sm text-left text-sm mb-4">
+                  <p className="font-semibold text-foreground mb-1">👉 {step.orgInfo.name}</p>
+                  <p className="text-muted-foreground">🌱 Įmonės kodas: {step.orgInfo.code}</p>
+                </div>
+              )}
+              {step.thanks && (
+                <p className="text-muted-foreground font-light text-sm mb-2">
+                  {step.thanks}
+                </p>
+              )}
               {step.detailTitle && (
                 <p className="text-sm font-semibold text-foreground mb-2 text-left">
                   {step.detailTitle}
@@ -82,21 +118,27 @@ const HowToHelpSection = () => {
                     <li key={d}>{d}</li>
                   ))}
                 </ul>
-              ) : (
-                step.details && (
-                  <p className="text-xs text-muted-foreground bg-muted/50 p-3 rounded-sm text-left">
-                    {step.details}
-                  </p>
-                )
-              )}
-              {step.link && (
-                <a
-                  href={step.link}
-                  className="inline-block text-primary text-sm font-medium hover:underline mt-2"
-                >
-                  {step.linkText}
-                </a>
-              )}
+              ) : null}
+              <div className="flex flex-col gap-2 mt-4">
+                {step.link && (
+                  <a
+                    href={step.link}
+                    target={step.link.startsWith("http") ? "_blank" : undefined}
+                    rel={step.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="w-full bg-primary text-primary-foreground px-6 py-3 rounded font-medium hover:opacity-90 transition-opacity text-center text-sm"
+                  >
+                    {step.linkText}
+                  </a>
+                )}
+                {step.secondaryLink && (
+                  <a
+                    href={step.secondaryLink}
+                    className="inline-block text-primary text-sm font-medium hover:underline"
+                  >
+                    {step.secondaryLinkText}
+                  </a>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>

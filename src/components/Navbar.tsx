@@ -8,6 +8,7 @@ const navLinks = [
   { label: "Galerija", href: "#gallery" },
   { label: "Kaip padėti", href: "#how-to-help" },
   { label: "Kontaktai", href: "#contact" },
+  { label: "Paremti Dabar", href: "https://contribee.com/tevyneslabui", isExternal: true },
 ];
 
 const Navbar = () => {
@@ -57,7 +58,13 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="font-display text-xs tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors"
+              target={link.isExternal ? "_blank" : undefined}
+              rel={link.isExternal ? "noopener noreferrer" : undefined}
+              className={`font-display text-xs tracking-[0.2em] ${
+                link.isExternal
+                  ? "bg-primary text-primary-foreground px-3 py-1 rounded hover:opacity-90 transition-opacity"
+                  : "text-muted-foreground hover:text-primary transition-colors"
+              }`}
             >
               {link.label.toUpperCase()}
             </a>
@@ -89,8 +96,14 @@ const Navbar = () => {
                 <a
                   key={link.href}
                   href={link.href}
+                  target={link.isExternal ? "_blank" : undefined}
+                  rel={link.isExternal ? "noopener noreferrer" : undefined}
                   onClick={() => setMenuOpen(false)}
-                  className="font-display text-sm tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors"
+                  className={`font-display text-sm tracking-[0.2em] ${
+                    link.isExternal
+                      ? "bg-primary text-primary-foreground px-3 py-1 rounded hover:opacity-90 transition-opacity"
+                      : "text-muted-foreground hover:text-primary transition-colors"
+                  }`}
                 >
                   {link.label.toUpperCase()}
                 </a>
