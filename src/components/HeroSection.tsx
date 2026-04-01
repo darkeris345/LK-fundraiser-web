@@ -10,6 +10,7 @@ const HeroSection = () => {
           alt="Platoon silhouettes at sunset"
           className="w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-gray-900/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
 
@@ -29,12 +30,12 @@ const HeroSection = () => {
             Sunkumai, kuriuos įveikiame šiandien, yra saugios rytdienos ir mūsų vienybės pamatas.
           </h4>
           <p className="text-lg md:text-xl max-w-xl mx-auto mb-8 font-light">
-            VšĮ „Tėvynės labui“ yra nepelno siekianti organizacija, vienijanti pilietiškus žmones, siekiančius gilinti žinias ir tobulinti įgūdžius, reikalingus Tėvynės gynybai ir visuomenės atsparumui stiprinti.
+            VšĮ „Tėvynės labui“ yra ne pelno siekianti organizacija, vienijanti pilietiškus žmones, siekiančius gilinti žinias ir tobulinti įgūdžius, reikalingus Tėvynės gynybai ir visuomenės atsparumui stiprinti.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#how-to-help"
-              className="inline-block bg-primary text-primary-foreground font-display text-sm tracking-[0.2em] px-8 py-4 hover:opacity-90 transition-opacity"
+              className="inline-block bg-primary text-primary-foreground font-display text-sm tracking-[0.2em] px-8 py-3 rounded hover:opacity-90 transition-opacity"
             >
               PRISIDĖK PRIE MISIJOS
             </a>

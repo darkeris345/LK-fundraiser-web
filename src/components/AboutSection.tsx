@@ -11,13 +11,13 @@ const AboutSection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <p className="text-primary font-display text-sm tracking-[0.3em] mb-4">
+          <p className="text-primary font-display text-base md:text-lg tracking-[0.3em] mb-4">
             APIE MUS
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-8">
             VšĮ „Tėvynės labui"
           </h2>
-          <div className="space-y-5 text-lg leading-relaxed font-light justify-start text-left">
+          <div className="space-y-5 text-lg leading-relaxed font-light justify-start text-left text-foreground/85">
             <p>
               VšĮ „Tėvynės labui“ telkia žmones, kuriems rūpi Lietuvos saugumas, pilietiškumas ir visuomenės atsparumas. Mūsų tikslas – gilinti žinias, lavinti praktinius įgūdžius ir dalintis patirtimi, kuri gali būti svarbi kritinėse situacijose bei ginant Tėvynę.
             </p>

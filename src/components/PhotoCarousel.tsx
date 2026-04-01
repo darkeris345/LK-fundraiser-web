@@ -73,7 +73,7 @@ const PhotoCarousel = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <p className="text-primary font-display text-sm tracking-[0.3em] mb-4">
+          <p className="text-primary font-display text-base md:text-lg tracking-[0.3em] mb-4">
             GALERIJA
           </p>
           <h2 className="font-display text-3xl md:text-5xl font-bold">

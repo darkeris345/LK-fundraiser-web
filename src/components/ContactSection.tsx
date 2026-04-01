@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, FileUser } from "lucide-react";
+import { Mail, MapPin, Facebook, FileUser } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -12,13 +12,13 @@ const ContactSection = () => {
           transition={{ duration: 0.8 }}
           className="max-w-2xl mx-auto text-center"
         >
-          <span className="font-display text-xs tracking-[0.3em] text-primary">
+          <p className="text-primary font-display text-base md:text-lg tracking-[0.3em] mb-4">
             KONTAKTAI
-          </span>
+          </p>
           <h2 className="font-display text-3xl md:text-4xl mt-3 mb-8 text-foreground">
             Susisiekite su mumis
           </h2>
-          <p className="text-muted-foreground font-light leading-relaxed mb-10">
+          <p className="text-foreground/85 font-light leading-relaxed mb-10">
             Jei turite klausimų apie paramą arba norite koordinuoti paramos pristatymą, susisiekite su mumis žemiau nurodytais kanalais.
           </p>
 
@@ -27,18 +27,18 @@ const ContactSection = () => {
               <Mail className="w-5 h-5 text-primary mt-0.5 shrink-0" />
               <div>
                 <p className="font-display text-sm tracking-wide text-foreground mb-1">EMAIL</p>
-                <a href="mailto:tevyneslabui@gmail.com" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                  tevyneslabui@gmail.com
+                <a href="mailto:romo.jonaicio@gmail.com" className="text-foreground/85 text-sm hover:text-primary transition-colors">
+                  romo.jonaicio@gmail.com
                 </a>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <Phone className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+              <Facebook className="w-5 h-5 text-primary mt-0.5 shrink-0" />
               <div>
-                <p className="font-display text-sm tracking-wide text-foreground mb-1">PHONE</p>
-                <a href="tel:+380000000000" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                  +380 (00) 000-00-00
+                <p className="font-display text-sm tracking-wide text-foreground mb-1">FACEBOOK PUSLAPIS</p>
+                <a href="https://www.facebook.com/share/18FQpjmzn9/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-foreground/85 text-sm hover:text-primary transition-colors">
+                  Tėvynės labui
                 </a>
               </div>
             </div>
@@ -47,7 +47,7 @@ const ContactSection = () => {
               <FileUser className="w-5 h-5 text-primary mt-0.5 shrink-0" />
               <div>
                 <p className="font-display text-sm tracking-wide text-foreground mb-1">VšĮ „Tėvynės labui“</p>
-                <p className="text-muted-foreground text-sm">Įmonės kodas: 306207884</p>
+                <p className="text-foreground/85 text-sm">Įmonės kodas: 306207884</p>
 
               </div>
             </div>
