@@ -26,7 +26,7 @@ const HeroSection = () => {
           <h4 className="text-primary font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[0.95] mb-6 mx-auto max-w-3xl">
             TĖVYNĖS LABUI
           </h4>
-          <h4 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold leading-[0.95] mb-8 mx-auto max-w-4xl">
+          <h4 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold leading-tight md:leading-[0.95] mb-8 mx-auto max-w-4xl">
             Sunkumai, kuriuos įveikiame šiandien, yra saugios rytdienos ir mūsų vienybės pamatas.
           </h4>
           <p className="text-lg md:text-xl max-w-xl mx-auto mb-8 font-light">

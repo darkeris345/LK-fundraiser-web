@@ -21,22 +21,22 @@ import gallery16 from "@/assets/gallery-16.jpg";
 
 
 const images = [
-  { src: gallery1, alt: "Test1" },
-  { src: gallery2, alt: "Test2" },
-  { src: gallery3, alt: "Test3" },
-  { src: gallery4, alt: "Test4" },
-  { src: gallery5, alt: "Test5" },
-  { src: gallery6, alt: "Test6" },
-  { src: gallery7, alt: "Test7" },
-  { src: gallery8, alt: "Test8" },
-  { src: gallery9, alt: "Test9" },
-  { src: gallery10, alt: "Test10" },
-  { src: gallery11, alt: "Test11" },
-  { src: gallery12, alt: "Test12" },
-  { src: gallery13, alt: "Test13" },
-  { src: gallery14, alt: "Test14" },
-  { src: gallery15, alt: "Test15" },
-  { src: gallery16, alt: "Test16" },
+  { src: gallery1, alt: "Nuotrauka 1" },
+  { src: gallery2, alt: "Nuotrauka 2" },
+  { src: gallery3, alt: "Nuotrauka 3" },
+  { src: gallery4, alt: "Nuotrauka 4" },
+  { src: gallery5, alt: "Nuotrauka 5" },
+  { src: gallery6, alt: "Nuotrauka 6" },
+  { src: gallery7, alt: "Nuotrauka 7" },
+  { src: gallery8, alt: "Nuotrauka 8" },
+  { src: gallery9, alt: "Nuotrauka 9" },
+  { src: gallery10, alt: "Nuotrauka 10" },
+  { src: gallery11, alt: "Nuotrauka 11" },
+  { src: gallery12, alt: "Nuotrauka 12" },
+  { src: gallery13, alt: "Nuotrauka 13" },
+  { src: gallery14, alt: "Nuotrauka 14" },
+  { src: gallery15, alt: "Nuotrauka 15" },
+  { src: gallery16, alt: "Nuotrauka 16" },
 ];
 
 const PhotoCarousel = () => {
@@ -53,7 +53,7 @@ const PhotoCarousel = () => {
   );
 
   useEffect(() => {
-    const timer = setInterval(() => paginate(1), 5000);
+    const timer = setInterval(() => paginate(1), 16000);
     return () => clearInterval(timer);
   }, [paginate]);
 
@@ -64,7 +64,7 @@ const PhotoCarousel = () => {
   };
 
   return (
-    <section id="gallery" className="py-20 md:py-28 bg-muted/30">
+    <section id="gallery" className="py-24 md:py-28 bg-muted/30">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -96,6 +96,7 @@ const PhotoCarousel = () => {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="absolute inset-0 w-full h-full object-contain cursor-pointer hover:opacity-90 transition-opacity"
                 onClick={() => setSelectedImage(current)}
+                loading="lazy"
               />
             </AnimatePresence>
           </div>
