@@ -43,19 +43,26 @@ const PhotoCarousel = () => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+  const [lastInteraction, setLastInteraction] = useState(Date.now());
+  const intervalDuration = 16000;
 
   const paginate = useCallback(
     (dir: number) => {
       setDirection(dir);
       setCurrent((prev) => (prev + dir + images.length) % images.length);
+      setLastInteraction(Date.now());
     },
     []
   );
 
   useEffect(() => {
-    const timer = setInterval(() => paginate(1), 16000);
+    if (selectedImage !== null) {
+      return;
+    }
+
+    const timer = setInterval(() => paginate(1), intervalDuration);
     return () => clearInterval(timer);
-  }, [paginate]);
+  }, [paginate, selectedImage, lastInteraction]);
 
   const variants = {
     enter: (dir: number) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
@@ -121,8 +128,9 @@ const PhotoCarousel = () => {
               <button
                 key={i}
                 onClick={() => {
-                  setDirection(i > current ? 1 : -1);
+                  setDirection(i > current ? 1 : i < current ? -1 : 0);
                   setCurrent(i);
+                  setLastInteraction(Date.now());
                 }}
                 className={`w-2 h-2 rounded-full transition-all ${
                   i === current ? "bg-primary w-6" : "bg-muted-foreground/40"

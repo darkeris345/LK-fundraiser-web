@@ -37,8 +37,8 @@ const ContactSection = () => {
               <Facebook className="w-5 h-5 text-primary mt-0.5 shrink-0" />
               <div>
                 <p className="font-display text-sm tracking-wide text-foreground mb-1">FACEBOOK PUSLAPIS</p>
-                <a href="https://www.facebook.com/share/18FQpjmzn9/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-foreground/85 text-sm hover:text-primary transition-colors">
-                  Tėvynės labui
+                <a href="https://www.facebook.com/share/18FQpjmzn9/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-foreground/85 text-sm hover:text-primary transition-colors underline cursor-pointer">
+                  KASP 802 kuopa
                 </a>
               </div>
             </div>
